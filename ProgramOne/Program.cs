@@ -4,20 +4,20 @@ int maxLength = 3;
 
 Console.Clear();
 string input = InputMessage("Введите любые данные (слова, числа, символы) через запятую: ");
-string[] newArray = input.Split(',');
+string[] inputArray = input.Split(',');
 
-int sizeResult = SizeNewArray(newArray, maxLength);
+int sizeResult = SizeNewArray(inputArray, maxLength);
 
 if (sizeResult == 0)
 {
     Console.Clear();
-    Console.WriteLine($"[{string.Join(", ", newArray)}] - Все введённые данные длиной более 3 (трёх).");
+    Console.WriteLine($"[{string.Join(", ", inputArray)}] - Все введённые данные длиной более 3 (трёх).");
 }
 else
 {
-    string[] resultArray = ResultArray(newArray, maxLength, sizeResult);
+    string[] resultArray = ResultArray(inputArray, maxLength, sizeResult);
     Console.Clear();
-    Console.WriteLine($"[{string.Join(", ", newArray)}] -> [{string.Join(", ", resultArray)}]");
+    Console.WriteLine($"[{string.Join(", ", inputArray)}] -> [{string.Join(", ", resultArray)}]");
 }
 
 string InputMessage(string message)
