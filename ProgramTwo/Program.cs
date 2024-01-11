@@ -1,6 +1,9 @@
 ﻿// 2-й вариант решения задачи без использования функций (методов).
 
-Console.WriteLine("Введите значения через запятую: ");
+int maxLength = 3;
+
+Console.Clear();
+Console.WriteLine("Введите любые данные (слова, числа, символы) через запятую: ");
 string input = Console.ReadLine()!;
 string[] inputArray = input.Split(",");
 
@@ -9,7 +12,7 @@ int outputIndex = 0;
 for (int i = 0; i < inputArray.Length; i++)
 {
     string trimmed = inputArray[i].Trim();
-    if (trimmed.Length <= 3)
+    if (trimmed.Length <= maxLength)
     {
         outputArray[outputIndex] = trimmed;
         outputIndex++;
@@ -18,7 +21,7 @@ for (int i = 0; i < inputArray.Length; i++)
 if (outputIndex == 0)
 {
     Console.Clear();
-    Console.WriteLine($"[{string.Join(", ", inputArray)}] -> Все введенные данные больше трех символов.");
+    Console.WriteLine($"[{string.Join(", ", inputArray)}] -> Все введённые данные длиной более 3 (трёх).");
 }
 else
 {
